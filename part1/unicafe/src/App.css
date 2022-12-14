@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+li {
+    list-style-type: none; 
+   }
+
+
+
+.App-header {
+     display: flex;
+  flex-direction: column; 
+  font-weight: bold;
+  }
+
