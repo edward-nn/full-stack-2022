@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+}
+
+ 
+
+.click:hover {
+    background: rgb(152, 183, 251);
+  }
+
+
+
+.App-header {
+     display: flex;
+  flex-direction: column; 
+  font-weight: bold;
+  }
+
+  img {
+    width: 60px;
+    height: 60px;
+ }
+
+  .Note{
+    margin: center;
+  }
+#root{
+  margin: center;
+  padding: center;
+}
+
+.error {
+  color: red;
+  background: lightgrey;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.note {
+  color:green;
+  background-color: grey;
+  padding-top: 5px;
+  font-size: 15px;
+}
