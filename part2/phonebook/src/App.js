@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-//import axios from 'axios'
 import Persons from './Persons';
 import Filter from './Filter';
 import PersonForm from './PersonForm';
@@ -14,14 +13,12 @@ const App = () => {
   const [colorNew, setColorNew] = useState('green')
   const [message, setMessage] = useState(null)
   
-  /***
-  useState([
-    { name: 'Arto Hellas', number: '040-123456', id: 1 },
-    { name: 'Ada Lovelace', number: '39-44-5323523', id: 2 },
-    { name: 'Dan Abramov', number: '12-43-234345', id: 3 },
-    { name: 'Mary Poppendieck', number: '39-23-6423122', id: 4 }
-  ]) 
-   */ 
+  const generateId = () => {
+    const maxId = persons.length > 0
+      ? Math.max(...persons.map(n => n.id))
+      : 0
+    return maxId + 1
+  }
 
   const hook = () => {
     //console.log('effect')
@@ -55,7 +52,7 @@ if (!personExists) {
   const personObject = {
         name: user.name,
     number: user.number,
-    id: persons.length + 1,
+    id: generateId(),
     }
 apiService.create(personObject).then(
   returnNewPerson =>{
@@ -112,9 +109,10 @@ else {
       setTimeout(() => {
         setMessage(null)
       }, 5000)
-      //setNotes(notes.filter(n => n.id !== id))
+      setPersons(persons.filter((user) => user.id !== id));
+      
     })
-    //setPersons(persons.map((user) => (user.id === id ? updatedNumber : user)))
+    
   }
   
   return (
